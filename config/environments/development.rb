@@ -22,6 +22,6 @@ config.action_mailer.smtp_settings = {
   :port       => 587,
   :authentication     => :plain,
   :domain => 'myapp.com',
-  :user_name => 'jtmkrueger@gmail.com',
-  :password => '02021981'
+  :user_name => '',
+  :password => ''
 }
