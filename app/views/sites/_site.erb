@@ -1,0 +1,15 @@
+<p>
+  <strong>Name:</strong>
+  <%=h site.name %><br />
+  <strong>Domain:</strong>
+  <%=h site.domain %><br />
+  <strong>Active:</strong>
+  <%=h site.active %>
+</p>
+
+
+
+<p>
+  <%= link_to "Edit", edit_host_site_path(@host, site) %> |
+  <%= link_to "Destroy", host_site_path(@host, site), :confirm => 'Are you sure?', :method => :delete %> |
+</p>

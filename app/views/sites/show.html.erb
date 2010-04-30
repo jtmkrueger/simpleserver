@@ -1,0 +1,18 @@
+<% title "Site" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @site.name %><br />
+  <strong>Domain:</strong>
+  <%=h @site.domain %><br />
+  <strong>Active:</strong>
+  <%=h @site.active %>
+</p>
+
+<%= render :partial => 'active' %>
+
+<p>
+  <%= link_to "Edit", edit_site_path(@site) %> |
+  <%= link_to "Destroy", @site, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", sites_path %>
+</p>

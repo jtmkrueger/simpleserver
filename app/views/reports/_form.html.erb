@@ -1,0 +1,8 @@
+<% form_for @report do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :fixed %><br />
+    <%= f.check_box :fixed %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

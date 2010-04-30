@@ -1,0 +1,21 @@
+<% title "Hosts" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Active</th>
+  </tr>
+  <% for host in @hosts %>
+    <tr>
+      <td><%=h host.name %></td>
+      <td><%=h host.address %></td>
+      <td><%=h host.active %></td>
+      <td><%= link_to "Show", host %></td>
+      <td><%= link_to "Edit", edit_host_path(host) %></td>
+      <td><%= link_to "Destroy", host, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Host", new_host_path %></p>

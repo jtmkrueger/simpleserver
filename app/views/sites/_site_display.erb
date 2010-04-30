@@ -1,0 +1,7 @@
+<%= render :partial => "/sites/site", :collection => @host.sites %>
+
+<h2>Create New</h2>
+<% @site = Site.new %>
+<% form_for [@host, @site] do |f| %>
+<%= render :partial => "sites/form", :locals => {:f => f} %>
+<% end -%>

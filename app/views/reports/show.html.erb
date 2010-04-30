@@ -1,0 +1,24 @@
+<% title "Report" %>
+
+<p>
+  <strong>Sent At:</strong>
+  <%=h @report.sent_at %>
+</p>
+<p>
+  <strong># Of Sites Down:</strong>
+  <%=h @report.down %>
+</p>
+<p>
+  <strong>Actual Sites Broken:</strong>
+  <%=h @report.broke_sites %>
+</p>
+<p>
+  <strong>Report Content:</strong>
+  <%=h @report.body %>
+</p>
+<%= render :partial => 'form' %>
+
+<p>
+  <%= link_to "Destroy", @report, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", reports_path %>
+</p>

@@ -1,0 +1,18 @@
+<% title "Reports" %>
+
+<table cellpadding="10">
+  <tr>
+    <th>Sent At</th>
+    <th>Fixed</th>
+    
+  </tr>
+  <% for report in @reports %>
+    <tr>
+      <td><%=h report.sent_at %></td>
+      <td><%=h report.fixed %></td>
+      <td><%= link_to "Show", report %> |
+      <%= link_to "Destroy", report, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
