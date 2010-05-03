@@ -50,7 +50,7 @@ class SitesController < ApplicationController
   
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      username == USERNAME && password == PASSWORD
+      username == ENV['USERNAME'] && password == ENV['PASSWORD']
     end
   end
 end
