@@ -9,20 +9,9 @@ require 'curb'
 require 'action_mailer'
 require 'ping'
 
-class Mailer < ActionMailer::Base
 
-  def sites_down(body)
-    recipients "jtmkrueger@gmail.com"
-    from       "john@x-cr.com"
-    subject    "SITE(S) FAIL"
-
-    body        " #{body}"        
-  end
-end
 
 # Mailer.template_root = File.dirname(__FILE__)
-Mailer.delivery_method = :sendmail
-Mailer.logger = Logger.new(STDOUT)
 
 
 class SimpleServerCheck
