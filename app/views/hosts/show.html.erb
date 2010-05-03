@@ -1,26 +1,14 @@
-<% title "Host" %>
-
-<p>
-  <strong>Name:</strong>
-  <%=h @host.name %>
-</p>
-<p>
-  <strong>Address:</strong>
-  <%=h @host.address %>
-</p>
-<p>
-  <strong>Active:</strong>
-  <%=h @host.active %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_host_path(@host) %> |
-  <%= link_to "Destroy", @host, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", hosts_path %>
-</p>
+<% title "#{@host.name} (#{@host.address})" %>
+<small><%=@host.active ? "Active" : "Inactive" %></small>
+<%= link_to "Edit", edit_host_path(@host) %> |
+<%= link_to "Destroy", @host, :confirm => 'Are you sure?', :method => :delete %> |
+<%= link_to "View All", hosts_path %>
+<div style=" background-color: #ccc; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #000; padding: 10px; font-size: x-small; width: 250px" >
 
 <h2>Sites</h2>
 <table>
   <%= render :partial => "sites/site_display" %>
-
 </table>
+</div>
+
+<div style="clear: both;"></div>

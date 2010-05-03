@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   def index
-    @reports = Report.all
+   
   end
   
   def show
@@ -36,14 +36,14 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
     @report.destroy
     flash[:notice] = "Successfully destroyed report."
-    redirect_to reports_url
+    redirect_to hosts_url
   end
   
   protected
   
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      username == "admin" && password == "ch2ngeme"
+      username == APP_CONFIG['userame'] && password == APP_CONFIG['password']
     end
   end
 end

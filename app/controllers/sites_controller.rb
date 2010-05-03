@@ -50,7 +50,7 @@ class SitesController < ApplicationController
   
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      username == "admin" && password == "ch2ngeme"
+      username == APP_CONFIG['userame'] && password == APP_CONFIG['password']
     end
   end
 end
