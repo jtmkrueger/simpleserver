@@ -35,12 +35,12 @@ class SimpleServerCheck
      
       #make sure we are only looking at hosts that are active
       # hosts = db.query("SELECT * FROM hosts WHERE active = 1")
-      hosts = Host.find(:all, :conditions => "active = 1")
+      hosts = Host.find(:all, :conditions => "active = '1'")
       
     
   	  # Getting the most recent report since we only want to run the script to send a report every 2 hours
       # last_report = db.query("SELECT * FROM reports WHERE fixed = 0 ORDER BY sent_at DESC Limit 0,1")
-      last_report = Report.find(:all, :conditions => "fixed = 0", :order => "sent_at DESC", :limit => "0,1")
+      last_report = Report.find(:all, :conditions => "fixed = '0'", :order => "sent_at DESC", :limit => "0,1")
       last_report.each {|r| @time = r[1]}
   		# If there isn't a report in the database yet it sets the time to greater than 2 hours so the script will run and report if needed.
           if @time.nil?
@@ -69,7 +69,7 @@ class SimpleServerCheck
                 end
             
                # sites = db.query("SELECT * FROM sites WHERE active = 1 AND host_id = #{h[0]}")
-               sites = h.sites.find(:all, :conditions => "sites.active = 1" )
+               sites = h.sites.find(:all, :conditions => "sites.active = '1'" )
                 sites.each do |s|
               
                   puts s.inspect
@@ -104,7 +104,7 @@ class SimpleServerCheck
               if sites_down > 0 or pings_down > 0
                   #send text and email
                   # record_report = db.query("INSERT INTO reports(down, sent_at, fixed, broke_sites, body) VALUES(#{sites_down}, now(), 0, '#{broke_sites}', '#{body}')")
-                  record_report = Report.create(:down => sites_down, :sent_at => Time.now, :fixed => 0, :broke_sites => broke_sites, :body => body )
+                  record_report = Report.create(:down => sites_down, :sent_at => Time.now, :fixed => '0', :broke_sites => broke_sites, :body => body )
                   # this sends the email
                   Mailer.deliver_sites_down(body)
               end
