@@ -1,6 +1,6 @@
 # APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/config.yml")
 
-action_controller.session = {
+Action.session = {
     :username => ENV['USERNAME'],
     :password => ENV['PASSWORD']
   }
