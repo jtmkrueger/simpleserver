@@ -65,7 +65,7 @@ class SimpleServerCheck
                 else
                   pings_down = pings_down + 1
                   broke_sites = broke_sites + "#{h.name},\n"
-                  body = body + h.host.name + " unable to ping, go take a look at this host."
+                  body = body + h.name + " unable to ping, go take a look at this host."
                 end
             
                # sites = db.query("SELECT * FROM sites WHERE active = 1 AND host_id = #{h[0]}")
