@@ -1,1 +1,2 @@
-APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/config.yml")
+:username   => ENV['USERNAME']
+:password   => ENV['PASSWORD']
