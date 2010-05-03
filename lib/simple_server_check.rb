@@ -27,7 +27,7 @@ Mailer.logger = Logger.new(STDOUT)
 
 class SimpleServerCheck
  
-  def self
+  def self.run_checks
        @time = nil
  
       # Connect to db that stores all of our sites to monitor

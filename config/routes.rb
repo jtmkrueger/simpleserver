@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :hosts, :has_many => :sites
-
+  map.resources :check
   map.resources :reports
 
   # The priority is based upon order of creation: first created -> highest priority.
