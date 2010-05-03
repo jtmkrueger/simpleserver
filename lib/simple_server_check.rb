@@ -40,7 +40,7 @@ class SimpleServerCheck
     
   	  # Getting the most recent report since we only want to run the script to send a report every 2 hours
       # last_report = db.query("SELECT * FROM reports WHERE fixed = 0 ORDER BY sent_at DESC Limit 0,1")
-      last_report = Report.find(:all, :conditions => "fixed = '0'", :order => "sent_at DESC", :limit => "0,1")
+      last_report = Report.find(:all, :conditions => "fixed = '0'", :order => "sent_at DESC", :limit => "0", :offset => "1")
       last_report.each {|r| @time = r[1]}
   		# If there isn't a report in the database yet it sets the time to greater than 2 hours so the script will run and report if needed.
           if @time.nil?
