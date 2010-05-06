@@ -48,8 +48,10 @@ class SimpleServerCheck
               broke_sites = ""
             
               hosts.each do |h|
+                puts h.inspect
+                print h.name
                  #only send if sites are down
-                if Ping.pingecho("#{h.address}", 10) == true
+                if Ping.pingecho("#{h.address}", 100) == true
                   puts "#{h.name} ping sucessful"
                 else
                   pings_down = pings_down + 1
