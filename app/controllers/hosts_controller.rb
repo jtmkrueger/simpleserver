@@ -1,4 +1,7 @@
 class HostsController < ApplicationController
+  
+  before_filter :authenticate
+  
   def index
     @hosts = Host.all
      @reports = Report.all
