@@ -37,6 +37,9 @@ a {
 #flash_notice {
   background-color: #CFC;
   border: solid 1px #6C6;
+	padding: 10px 10px 10px 10px;
+ 	width: 95%; 
+	margin: 10px 10px 30px 10px;
 }
 
 #flash_error {
