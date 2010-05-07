@@ -5,8 +5,12 @@
     <title><%= h(yield(:title) || "Untitled") %></title>
     <%= stylesheet_link_tag 'application' %>
     <%= yield(:head) %>
-  </head>
+
+    <meta name="viewport" content="width=720" />  
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    </head>
   <body>
+    
     <div id="container">
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
