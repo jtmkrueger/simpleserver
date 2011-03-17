@@ -4,7 +4,7 @@ class HostsController < ApplicationController
   
   def index
     @hosts = Host.all
-     @reports = Report.all
+     @reports = Report.paginate(:per_page => 15, :page => params[:page], :order => 'created_at DESC')
   end
   
   def show
