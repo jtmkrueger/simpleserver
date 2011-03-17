@@ -27,6 +27,6 @@
       <th>What's Broken</th>
       <th>Report Content</th>
     </tr>
-<%= render :partial => 'reports/report_index', :collection => @reports %>
+<%= render :partial => 'reports/report_index', :collection => @reports.find(:all, :order => 'created_at DESC') %>
 </table>
 </div>
