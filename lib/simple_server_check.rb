@@ -18,10 +18,6 @@ class SimpleServerCheck
  
   def self.run_checks
        @time = nil
- 
-      # Connect to db that stores all of our sites to monitor
-      # db = Mysql::new("localhost","root","","simpleserver")
-     
       #make sure we are only looking at hosts that are active
       # hosts = db.query("SELECT * FROM hosts WHERE active = 1")
       hosts = Host.find(:all, :conditions => "active = '1'")
